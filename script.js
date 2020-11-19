@@ -4,12 +4,23 @@ $(document).ready(function () {
 
 
     const WeatherAPIKey = "5bb3a5739d78e8deccb5b36c764be06d";
+    const array = [];
+    const userInput = $("#search-text").val();
+    searchHistory = [];
 
-    let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
     if (searchHistory === null) {
         searchHistory = [];
     }
 
+    if (localStorage.getItem("searchHistory")) {
+        JSON.parse(localStorage.getItem("searchHistory"));
+        searchHistory.push(userInput);
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    } else {
+        searchHistory.push(userInput);
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    }
     //Check for cities searched in local storage and display in city list container
     // if (searchHistory == "") {
 
