@@ -78,7 +78,7 @@ $(document).ready(function () {
             //we convert the markup string into html then add it to the page
             $("#current-day").html(curentMarkUp);
 
-            const forcastURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${WeatherAPIKey}`;
+            const forcastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${WeatherAPIKey}`;
             //Pull Current Day data from weather api
             $.ajax({
                 url: forcastURL,
